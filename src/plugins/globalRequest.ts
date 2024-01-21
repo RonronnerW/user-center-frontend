@@ -36,7 +36,6 @@ request.interceptors.request.use((url, options): any => {
  */
 request.interceptors.response.use(async (response, options): Promise<any> => {
   const res = await response.clone().json();
-  alert(process.env.NODE_ENV);
   if (res.code === 0) {
     return res.data;
   }
